@@ -1,0 +1,78 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+site_url: https://zippy-medovik-ba90bc.netlify.app
+
+collections:
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+
+      - name: "popup"
+        label: "Popup Freebie"
+        file: "admin/popup-settings.json"
+        fields:
+          - { label: "Popup Heading", name: "heading", widget: "string", default: "Grab Your Free Guide" }
+          - { label: "Popup Subtext", name: "subtext", widget: "string", default: "Sign up and get instant access." }
+          - { label: "Flodesk Form ID", name: "form_id", widget: "string", default: "69704d9b20f849449bf1a5ad" }
+          - { label: "Show Popup?", name: "enabled", widget: "boolean", default: true }
+
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "admin/posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "External URL (Substack link)", name: "url", widget: "string" }
+      - { label: "Cover Image", name: "image", widget: "image", required: false }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+
+      - name: "homepage"
+        label: "Home Page"
+        file: "admin/content-home.json"
+        fields:
+          - { label: "Hero Headline", name: "hero_headline", widget: "string" }
+          - { label: "Hero Subtext", name: "hero_subtext", widget: "text" }
+          - { label: "CTA Button Text", name: "cta_text", widget: "string" }
+          - { label: "CTA Button Link", name: "cta_link", widget: "string" }
+
+      - name: "about"
+        label: "About Page"
+        file: "admin/content-about.json"
+        fields:
+          - { label: "Page Headline", name: "headline", widget: "string" }
+          - { label: "Bio (short)", name: "bio_short", widget: "text" }
+          - { label: "Bio (full)", name: "bio_full", widget: "markdown" }
+          - { label: "Photo", name: "photo", widget: "image", required: false }
+
+      - name: "services"
+        label: "Services Page"
+        file: "admin/content-services.json"
+        fields:
+          - { label: "Page Headline", name: "headline", widget: "string" }
+          - { label: "Intro Text", name: "intro", widget: "text" }
+          - label: "Services List"
+            name: "services"
+            widget: "list"
+            fields:
+              - { label: "Service Name", name: "name", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Price / Starting At", name: "price", widget: "string", required: false }
+
+      - name: "contact"
+        label: "Contact Page"
+        file: "admin/content-contact.json"
+        fields:
+          - { label: "Page Headline", name: "headline", widget: "string" }
+          - { label: "Intro Text", name: "intro", widget: "text" }
