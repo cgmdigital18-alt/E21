@@ -1,0 +1,37 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+site_url: https://zippy-medovik-ba90bc.netlify.app
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+
+      - name: "homepage"
+        label: "Home Page"
+        file: "index.html"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+
+      - name: "about"
+        label: "About Page"
+        file: "about.html"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+
+      - name: "services"
+        label: "Services Page"
+        file: "services.html"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+
+      - name: "contact"
+        label: "Contact Page"
+        file: "contact.html"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
