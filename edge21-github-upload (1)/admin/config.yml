@@ -17,22 +17,12 @@ collections:
         label: "Popup Freebie"
         file: "admin/popup-settings.json"
         fields:
-          - { label: "Popup Heading", name: "heading", widget: "string", default: "Grab Your Free Guide" }
-          - { label: "Popup Subtext", name: "subtext", widget: "string", default: "Sign up and get instant access." }
-          - { label: "Flodesk Form ID", name: "form_id", widget: "string", default: "69704d9b20f849449bf1a5ad" }
+          - { label: "Popup Heading", name: "heading", widget: "string" }
+          - { label: "Popup Subtext", name: "subtext", widget: "text" }
+          - { label: "Flodesk Form ID", name: "form_id", widget: "string" }
+          - { label: "CTA Button Text", name: "cta_text", widget: "string" }
+          - { label: "Fine Print", name: "note", widget: "string" }
           - { label: "Show Popup?", name: "enabled", widget: "boolean", default: true }
-
-  - name: "blog"
-    label: "Blog Posts"
-    folder: "admin/posts"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Excerpt", name: "excerpt", widget: "text" }
-      - { label: "External URL (Substack link)", name: "url", widget: "string" }
-      - { label: "Cover Image", name: "image", widget: "image", required: false }
 
   - name: "pages"
     label: "Pages"
@@ -42,38 +32,61 @@ collections:
         label: "Home Page"
         file: "admin/content-home.json"
         fields:
+          - { label: "Hero Tag Line", name: "hero_tag", widget: "string" }
           - { label: "Hero Headline", name: "hero_headline", widget: "string" }
           - { label: "Hero Subtext", name: "hero_subtext", widget: "text" }
-          - { label: "CTA Button Text", name: "cta_text", widget: "string" }
-          - { label: "CTA Button Link", name: "cta_link", widget: "string" }
+          - { label: "CTA Button Text", name: "hero_cta_primary_text", widget: "string" }
+          - { label: "CTA Button Link", name: "hero_cta_primary_link", widget: "string" }
+          - { label: "Secondary Button Text", name: "hero_cta_secondary_text", widget: "string" }
+          - { label: "Secondary Button Link", name: "hero_cta_secondary_link", widget: "string" }
+          - { label: "Callout Headline", name: "callout_headline", widget: "string" }
+          - { label: "Callout Text", name: "callout_text", widget: "text" }
+          - { label: "Callout CTA Text", name: "callout_cta_text", widget: "string" }
+          - { label: "Bottom Banner Headline", name: "cta_banner_headline", widget: "string" }
+          - { label: "Bottom Banner Text", name: "cta_banner_text", widget: "text" }
 
       - name: "about"
         label: "About Page"
         file: "admin/content-about.json"
         fields:
-          - { label: "Page Headline", name: "headline", widget: "string" }
-          - { label: "Bio (short)", name: "bio_short", widget: "text" }
-          - { label: "Bio (full)", name: "bio_full", widget: "markdown" }
+          - { label: "Page Headline", name: "page_headline", widget: "string" }
+          - { label: "Page Subtitle", name: "page_subtitle", widget: "text" }
           - { label: "Photo", name: "photo", widget: "image", required: false }
+          - { label: "Bio Headline", name: "bio_headline", widget: "string" }
+          - { label: "Bio Paragraph 1", name: "bio_p1", widget: "text" }
+          - { label: "Bio Paragraph 2", name: "bio_p2", widget: "text" }
+          - { label: "Bio Paragraph 3", name: "bio_p3", widget: "text" }
+          - { label: "Bio Paragraph 4", name: "bio_p4", widget: "text" }
+          - { label: "CTA Headline", name: "cta_headline", widget: "string" }
+          - { label: "CTA Text", name: "cta_text", widget: "text" }
 
       - name: "services"
         label: "Services Page"
         file: "admin/content-services.json"
         fields:
-          - { label: "Page Headline", name: "headline", widget: "string" }
-          - { label: "Intro Text", name: "intro", widget: "text" }
-          - label: "Services List"
-            name: "services"
-            widget: "list"
-            fields:
-              - { label: "Service Name", name: "name", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-              - { label: "Price / Starting At", name: "price", widget: "string", required: false }
+          - { label: "Page Headline", name: "page_headline", widget: "string" }
+          - { label: "Page Subtitle", name: "page_subtitle", widget: "text" }
+          - { label: "Service 1 Title", name: "service1_title", widget: "string" }
+          - { label: "Service 1 Description", name: "service1_desc", widget: "text" }
+          - { label: "Service 1 Price", name: "service1_price", widget: "string" }
+          - { label: "Service 1 Price Note", name: "service1_price_note", widget: "string" }
+          - { label: "Service 2 Title", name: "service2_title", widget: "string" }
+          - { label: "Service 2 Description", name: "service2_desc", widget: "text" }
+          - { label: "Service 2 Price", name: "service2_price", widget: "string" }
+          - { label: "Service 2 Price Note", name: "service2_price_note", widget: "string" }
+          - { label: "Service 3 Title", name: "service3_title", widget: "string" }
+          - { label: "Service 3 Description", name: "service3_desc", widget: "text" }
+          - { label: "Service 3 Price", name: "service3_price", widget: "string" }
+          - { label: "Service 3 Price Note", name: "service3_price_note", widget: "string" }
 
       - name: "contact"
         label: "Contact Page"
         file: "admin/content-contact.json"
         fields:
-          - { label: "Page Headline", name: "headline", widget: "string" }
-          - { label: "Intro Text", name: "intro", widget: "text" }
-
+          - { label: "Page Headline", name: "page_headline", widget: "string" }
+          - { label: "Page Subtitle", name: "page_subtitle", widget: "text" }
+          - { label: "Info Headline", name: "info_headline", widget: "string" }
+          - { label: "Info Text 1", name: "info_text1", widget: "text" }
+          - { label: "Info Text 2", name: "info_text2", widget: "text" }
+          - { label: "Email Address", name: "email", widget: "string" }
+          - { label: "Response Time Note", name: "response_time", widget: "string" }
